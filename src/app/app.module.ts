@@ -11,17 +11,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule( {
-    imports:      [
+    imports: [
         BrowserModule,
         BrowserAnimationsModule,
         DashboardModule,
         AppRoutingModule
     ],
-    declarations: [ AppComponent ],
-    providers:    [],
-    bootstrap:    [ AppComponent ]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        FooterComponent
+    ],
+    providers: [],
+    bootstrap: [ AppComponent ]
 } )
 export class AppModule {
 }
