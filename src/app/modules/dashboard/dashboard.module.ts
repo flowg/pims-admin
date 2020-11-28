@@ -2,17 +2,17 @@
  * Angular imports
  */
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 /**
  * App imports
  */
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule( {
     imports:      [
-        CommonModule,
+        SharedModule,
         DashboardRoutingModule
     ],
     declarations: [ DashboardComponent ]
