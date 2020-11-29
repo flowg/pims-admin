@@ -1,14 +1,9 @@
-/**
- * Angular imports
- */
+/*
 import {
     ComponentFixture,
     TestBed
 } from '@angular/core/testing';
 
-/**
- * App imports
- */
 import { PimsTableComponent } from './pims-table.component';
 
 describe( 'PimsTableComponent', () => {
@@ -23,12 +18,13 @@ describe( 'PimsTableComponent', () => {
     } );
 
     beforeEach( () => {
-        fixture   = TestBed.createComponent( PimsTableComponent );
+        fixture = TestBed.createComponent( PimsTableComponent );
         component = fixture.componentInstance;
         fixture.detectChanges();
     } );
 
-    it( 'should be created', () => {
+    it( 'should create', () => {
         expect( component ).toBeTruthy();
     } );
 } );
+*/
