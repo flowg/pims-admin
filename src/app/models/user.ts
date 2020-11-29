@@ -1,270 +1,275 @@
 /**
+ * App imports
+ */
+import { ValueWithValidity } from './value-with-validity';
+
+/**
  * TypeScript entities and constants
  */
 export interface User {
-    name: string;
-    email: string;
-    phone: string;
-    address: string;
-    birth: string;
+    name: ValueWithValidity;
+    email: ValueWithValidity;
+    phone: ValueWithValidity;
+    address: ValueWithValidity;
+    birth: ValueWithValidity;
     img: string;
 }
 
 export const USERS_DATA: User[] = [
     {
-        name:    'Benjamin',
-        email:   'Cum@nisi.net',
-        phone:   '06 81 66 27 87',
-        address: 'San Marcello',
-        birth:   '30-09-94',
+        name:    { value: 'Benjamin', valid: true },
+        email:   { value: 'Cum@nisi.net', valid: false },
+        phone:   { value: '06 81 66 27 87', valid: true },
+        address: { value: 'San Marcello', valid: true },
+        birth:   { value: '30-09-94', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Patrick',
-        email:   'Nam.ac@NullafacilisisSuspendisse.net',
-        phone:   '09 21 67 83 93',
-        address: 'Lerwick',
-        birth:   '09-09-04',
+        name:    { value: 'Patrick', valid: true },
+        email:   { value: 'Nam.ac@NullafacilisisSuspendisse.net', valid: true },
+        phone:   { value: '09 21 67 83 93', valid: true },
+        address: { value: 'Lerwick', valid: true },
+        birth:   { value: '09-09-04', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Alfonso',
-        email:   'Nulla.interdum@arcu.com',
-        phone:   '02 98 26 70 13',
-        address: 'Penticton',
-        birth:   '29-08-92',
+        name:    { value: 'Alfonso', valid: true },
+        email:   { value: 'Nulla.interdum@arcu.com', valid: true },
+        phone:   { value: '02 98 26 70 13', valid: true },
+        address: { value: 'Penticton', valid: true },
+        birth:   { value: '29-08-92', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Murphy',
-        email:   'semper@tinciduntneque.edu',
-        phone:   '03 90 01 66 75',
-        address: 'Bharuch',
-        birth:   '14-10-93',
+        name:    { value: 'Murphy', valid: true },
+        email:   { value: 'semper@tinciduntneque.edu', valid: true },
+        phone:   { value: '03 90 01 66 75', valid: true },
+        address: { value: 'Bharuch', valid: true },
+        birth:   { value: '14-10-93', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Timon',
-        email:   'ultricies.sem@ipsum.edu',
-        phone:   '06 03 89 23 58',
-        address: 'Piedecuesta',
-        birth:   '10-07-94',
+        name:    { value: 'Timon', valid: true },
+        email:   { value: 'ultricies.sem@ipsum.edu', valid: true },
+        phone:   { value: '06 03 89 23 58', valid: true },
+        address: { value: 'Piedecuesta', valid: true },
+        birth:   { value: '10-07-94', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Abraham',
-        email:   'tristique@vel.net',
-        phone:   '07 54 53 45 19',
-        address: 'Billings',
-        birth:   '16-09-97',
+        name:    { value: 'Abraham', valid: true },
+        email:   { value: 'tristique@vel.net', valid: true },
+        phone:   { value: '07 54 53 45 19', valid: true },
+        address: { value: 'Billings', valid: true },
+        birth:   { value: '16-09-97', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Oleg',
-        email:   'quis.urna@seddictumeleifend.co.uk',
-        phone:   '05 77 04 89 91',
-        address: 'Montgomery',
-        birth:   '05-06-06',
+        name:    { value: 'Oleg', valid: true },
+        email:   { value: 'quis.urna@seddictumeleifend.co.uk', valid: true },
+        phone:   { value: '05 77 04 89 91', valid: true },
+        address: { value: 'Montgomery', valid: true },
+        birth:   { value: '05-06-06', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Dean',
-        email:   'aliquam.iaculis@dui.co.uk',
-        phone:   '04 37 33 58 46',
-        address: 'Lake Cowichan',
-        birth:   '15-06-96',
+        name:    { value: 'Dean', valid: true },
+        email:   { value: 'aliquam.iaculis@dui.co.uk', valid: true },
+        phone:   { value: '04 37 33 58 46', valid: true },
+        address: { value: 'Lake Cowichan', valid: true },
+        birth:   { value: '15-06-96', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Clayton',
-        email:   'lorem.lorem@felisNullatempor.ca',
-        phone:   '05 23 48 42 40',
-        address: 'Cappelle sul Tavo',
-        birth:   '10-07-00',
+        name:    { value: 'Clayton', valid: true },
+        email:   { value: 'lorem.lorem@felisNullatempor.ca', valid: true },
+        phone:   { value: '05 23 48 42 40', valid: true },
+        address: { value: 'Cappelle sul Tavo', valid: true },
+        birth:   { value: '10-07-00', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Chester',
-        email:   'Nullam@antebibendum.ca',
-        phone:   '09 69 96 38 13',
-        address: 'Proddatur',
-        birth:   '17-05-01',
+        name:    { value: 'Chester', valid: true },
+        email:   { value: 'Nullam@antebibendum.ca', valid: true },
+        phone:   { value: '09 69 96 38 13', valid: true },
+        address: { value: 'Proddatur', valid: true },
+        birth:   { value: '17-05-01', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Porter',
-        email:   'Integer.mollis@velitinaliquet.org',
-        phone:   '05 56 07 74 07',
-        address: 'Mödling',
-        birth:   '27-12-01',
+        name:    { value: 'Porter', valid: true },
+        email:   { value: 'Integer.mollis@velitinaliquet.org', valid: true },
+        phone:   { value: '05 56 07 74 07', valid: true },
+        address: { value: 'Mödling', valid: true },
+        birth:   { value: '27-12-01', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Keane',
-        email:   'blandit@morbitristique.co.uk',
-        phone:   '04 49 76 64 47',
-        address: 'Tresigallo',
-        birth:   '27-05-99',
+        name:    { value: 'Keane', valid: true },
+        email:   { value: 'blandit@morbitristique.co.uk', valid: true },
+        phone:   { value: '04 49 76 64 47', valid: true },
+        address: { value: 'Tresigallo', valid: true },
+        birth:   { value: '27-05-99', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Chaney',
-        email:   'ac.metus.vitae@ultriciesadipiscingenim.org',
-        phone:   '09 83 86 43 76',
-        address: 'Novosibirsk',
-        birth:   '25-01-05',
+        name:    { value: 'Chaney', valid: true },
+        email:   { value: 'ac.metus.vitae@ultriciesadipiscingenim.org', valid: true },
+        phone:   { value: '09 83 86 43 76', valid: true },
+        address: { value: 'Novosibirsk', valid: true },
+        birth:   { value: '25-01-05', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Cody',
-        email:   'molestie.dapibus.ligula@in.ca',
-        phone:   '03 18 97 85 40',
-        address: 'Pike Creek',
-        birth:   '24-12-94',
+        name:    { value: 'Cody', valid: true },
+        email:   { value: 'molestie.dapibus.ligula@in.ca', valid: true },
+        phone:   { value: '03 18 97 85 40', valid: true },
+        address: { value: 'Pike Creek', valid: true },
+        birth:   { value: '24-12-94', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Clinton',
-        email:   'Curabitur.sed.tortor@erosturpis.ca',
-        phone:   '04 42 14 83 00',
-        address: 'Terrance',
-        birth:   '26-11-91',
+        name:    { value: 'Clinton', valid: true },
+        email:   { value: 'Curabitur.sed.tortor@erosturpis.ca', valid: true },
+        phone:   { value: '04 42 14 83 00', valid: true },
+        address: { value: 'Terrance', valid: true },
+        birth:   { value: '26-11-91', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'James',
-        email:   'sollicitudin@sodalesMauris.co.uk',
-        phone:   '04 05 13 61 44',
-        address: 'São Luís',
-        birth:   '06-12-91',
+        name:    { value: 'James', valid: true },
+        email:   { value: 'sollicitudin@sodalesMauris.co.uk', valid: true },
+        phone:   { value: '04 05 13 61 44', valid: true },
+        address: { value: 'São Luís', valid: true },
+        birth:   { value: '06-12-91', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Adrian',
-        email:   'eu.nibh.vulputate@Sedidrisus.org',
-        phone:   '07 67 71 12 38',
-        address: 'Montaldo Bormida',
-        birth:   '17-12-00',
+        name:    { value: 'Adrian', valid: true },
+        email:   { value: 'eu.nibh.vulputate@Sedidrisus.org', valid: true },
+        phone:   { value: '07 67 71 12 38', valid: true },
+        address: { value: 'Montaldo Bormida', valid: true },
+        birth:   { value: '17-12-00', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Denton',
-        email:   'elit@erat.co.uk',
-        phone:   '04 88 53 20 36',
-        address: 'Villa Alemana',
-        birth:   '11-06-93',
+        name:    { value: 'Denton', valid: true },
+        email:   { value: 'elit@erat.co.uk', valid: true },
+        phone:   { value: '04 88 53 20 36', valid: true },
+        address: { value: 'Villa Alemana', valid: true },
+        birth:   { value: '11-06-93', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Lamar',
-        email:   'risus@nisiMaurisnulla.co.uk',
-        phone:   '06 59 47 21 58',
-        address: 'Madiun',
-        birth:   '05-11-03',
+        name:    { value: 'Lamar', valid: true },
+        email:   { value: 'risus@nisiMaurisnulla.co.uk', valid: true },
+        phone:   { value: '06 59 47 21 58', valid: true },
+        address: { value: 'Madiun', valid: true },
+        birth:   { value: '05-11-03', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Ezekiel',
-        email:   'quis.massa@venenatislacusEtiam.ca',
-        phone:   '04 35 87 91 09',
-        address: 'Nieuwkapelle',
-        birth:   '10-09-95',
+        name:    { value: 'Ezekiel', valid: true },
+        email:   { value: 'quis.massa@venenatislacusEtiam.ca', valid: true },
+        phone:   { value: '04 35 87 91 09', valid: true },
+        address: { value: 'Nieuwkapelle', valid: true },
+        birth:   { value: '10-09-95', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Daniel',
-        email:   'dui.nec.tempus@dapibusligula.co.uk',
-        phone:   '04 71 29 65 99',
-        address: 'Breton',
-        birth:   '07-05-05',
+        name:    { value: 'Daniel', valid: true },
+        email:   { value: 'dui.nec.tempus@dapibusligula.co.uk', valid: true },
+        phone:   { value: '04 71 29 65 99', valid: true },
+        address: { value: 'Breton', valid: true },
+        birth:   { value: '07-05-05', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Ray',
-        email:   'interdum.libero.dui@risusatfringilla.net',
-        phone:   '04 56 44 12 10',
-        address: 'Lac-Serent',
-        birth:   '26-06-06',
+        name:    { value: 'Ray', valid: true },
+        email:   { value: 'interdum.libero.dui@risusatfringilla.net', valid: true },
+        phone:   { value: '04 56 44 12 10', valid: true },
+        address: { value: 'Lac-Serent', valid: true },
+        birth:   { value: '26-06-06', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Buckminster',
-        email:   'sed@Aliquamvulputateullamcorper.ca',
-        phone:   '04 14 88 41 39',
-        address: 'Baulers',
-        birth:   '12-03-95',
+        name:    { value: 'Buckminster', valid: true },
+        email:   { value: 'sed@Aliquamvulputateullamcorper.ca', valid: true },
+        phone:   { value: '04 14 88 41 39', valid: true },
+        address: { value: 'Baulers', valid: true },
+        birth:   { value: '12-03-95', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Murphy',
-        email:   'Proin.sed.turpis@elementumpurus.com',
-        phone:   '01 59 40 47 83',
-        address: 'Scanzano Jonico',
-        birth:   '11-04-00',
+        name:    { value: 'Murphy', valid: true },
+        email:   { value: 'Proin.sed.turpis@elementumpurus.com', valid: true },
+        phone:   { value: '01 59 40 47 83', valid: true },
+        address: { value: 'Scanzano Jonico', valid: true },
+        birth:   { value: '11-04-00', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Arsenio',
-        email:   'molestie@eros.org',
-        phone:   '04 24 88 95 50',
-        address: 'Verzegnis',
-        birth:   '04-09-92',
+        name:    { value: 'Arsenio', valid: true },
+        email:   { value: 'molestie@eros.org', valid: true },
+        phone:   { value: '04 24 88 95 50', valid: true },
+        address: { value: 'Verzegnis', valid: true },
+        birth:   { value: '04-09-92', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Driscoll',
-        email:   'dignissim.Maecenas@utipsumac.com',
-        phone:   '07 78 69 38 37',
-        address: 'Waalwijk',
-        birth:   '18-01-99',
+        name:    { value: 'Driscoll', valid: true },
+        email:   { value: 'dignissim.Maecenas@utipsumac.com', valid: true },
+        phone:   { value: '07 78 69 38 37', valid: true },
+        address: { value: 'Waalwijk', valid: true },
+        birth:   { value: '18-01-99', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Carl',
-        email:   'vestibulum@aliquamadipiscinglacus.co.uk',
-        phone:   '02 56 03 07 31',
-        address: 'Ludlow',
-        birth:   '16-11-01',
+        name:    { value: 'Carl', valid: true },
+        email:   { value: 'vestibulum@aliquamadipiscinglacus.co.uk', valid: true },
+        phone:   { value: '02 56 03 07 31', valid: true },
+        address: { value: 'Ludlow', valid: true },
+        birth:   { value: '16-11-01', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Thomas',
-        email:   'risus.Duis@Fuscedolorquam.edu',
-        phone:   '07 17 58 64 06',
-        address: 'Fuenlabrada',
-        birth:   '05-01-98',
+        name:    { value: 'Thomas', valid: true },
+        email:   { value: 'risus.Duis@Fuscedolorquam.edu', valid: true },
+        phone:   { value: '07 17 58 64 06', valid: true },
+        address: { value: 'Fuenlabrada', valid: true },
+        birth:   { value: '05-01-98', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Keith',
-        email:   'lacus.Quisque.imperdiet@ac.net',
-        phone:   '06 44 06 04 20',
-        address: 'Thurso',
-        birth:   '30-09-01',
+        name:    { value: 'Keith', valid: true },
+        email:   { value: 'lacus.Quisque.imperdiet@ac.net', valid: true },
+        phone:   { value: '06 44 06 04 20', valid: true },
+        address: { value: 'Thurso', valid: true },
+        birth:   { value: '30-09-01', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Aidan',
-        email:   'varius@Vivamusrhoncus.ca',
-        phone:   '03 21 04 72 84',
-        address: 'Taltal',
-        birth:   '12-04-98',
+        name:    { value: 'Aidan', valid: true },
+        email:   { value: 'varius@Vivamusrhoncus.ca', valid: true },
+        phone:   { value: '03 21 04 72 84', valid: true },
+        address: { value: 'Taltal', valid: true },
+        birth:   { value: '12-04-98', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'Raja',
-        email:   'Phasellus.fermentum@enimMaurisquis.co.uk',
-        phone:   '02 68 21 83 08',
-        address: 'Värnamo',
-        birth:   '29-12-95',
+        name:    { value: 'Raja', valid: true },
+        email:   { value: 'Phasellus.fermentum@enimMaurisquis.co.uk', valid: true },
+        phone:   { value: '02 68 21 83 08', valid: true },
+        address: { value: 'Värnamo', valid: true },
+        birth:   { value: '29-12-95', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     },
     {
-        name:    'George',
-        email:   'lobortis.risus.In@Proin.org',
-        phone:   '06 54 50 42 24',
-        address: 'Macklin',
-        birth:   '26-02-98',
+        name:    { value: 'George', valid: true },
+        email:   { value: 'lobortis.risus.In@Proin.org', valid: true },
+        phone:   { value: '06 54 50 42 24', valid: true },
+        address: { value: 'Macklin', valid: true },
+        birth:   { value: '26-02-98', valid: true },
         img:     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04IQPD-wCoIQ3vpWQy5mjc1HTVrCP1ZvJyg&usqp=CAU'
     }
 ];

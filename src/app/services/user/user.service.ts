@@ -16,6 +16,10 @@ import {
 } )
 export class UserService {
     getUsers(): User[] {
-        return USERS_DATA;
+        /*
+         * We're deep-cloning to make sure this method always returns the reference object,
+         * no matter what is done with this value by the end-user
+         */
+        return JSON.parse( JSON.stringify( USERS_DATA ) );
     }
 }

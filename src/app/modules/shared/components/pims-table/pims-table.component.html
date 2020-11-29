@@ -12,8 +12,9 @@
                 <td mat-cell *matCellDef="let row; index as i" [title]="row[ column.name ]"
                     [tabindex]="getTabIndexForCell(i, j)">
                     <div class="pims-cell">
-                        <span>{{ row[ column.name ] }}</span>
+                        <span>{{ getValue( row[ column.name ] ) }}</span>
                         <mat-slide-toggle *ngIf="validityToggle"
+                                          [checked]="row[ column.name ]?.valid"
                                           [tabindex]="getTabIndexForCell(i, j) + 1"
                                           (change)="onValidityChanged($event, row, column)">
                         </mat-slide-toggle>

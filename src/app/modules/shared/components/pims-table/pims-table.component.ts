@@ -15,11 +15,13 @@ import {
     PageEvent
 } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import {
-    MatSort,
-    Sort
-} from '@angular/material/sort';
+import { MatSort } from '@angular/material/sort';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
+
+/**
+ * App imports
+ */
+import { ValueWithValidity } from 'src/app/models/value-with-validity';
 
 /**
  * TypeScript entities and constants
@@ -157,5 +159,9 @@ export class PimsTableComponent<T> implements OnChanges, OnInit, AfterViewInit {
         // TODO: Add a snackbar to display a notification when the toggle is used
         // TODO: Add styling
         // TODO: Implement the switch to Accordion for mobile
+    }
+
+    getValue( item: ValueWithValidity | string ): string {
+        return ( item as ValueWithValidity ).value ? ( item as ValueWithValidity ).value : ( item as string );
     }
 }
