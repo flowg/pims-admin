@@ -16,7 +16,7 @@
                         <mat-slide-toggle *ngIf="validityToggle"
                                           [checked]="row[ column.name ]?.valid"
                                           [tabindex]="getTabIndexForCell(i, j) + 1"
-                                          (change)="onValidityChanged($event, row, column)">
+                                          (change)="onValidityChanged($event, row, i, column)">
                         </mat-slide-toggle>
                     </div>
                 </td>

@@ -7,6 +7,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 /**
  * App imports
@@ -20,7 +21,8 @@ import { PimsTableComponent } from './components/pims-table/pims-table.component
         MatTableModule,
         MatSortModule,
         MatPaginatorModule,
-        MatSlideToggleModule
+        MatSlideToggleModule,
+        MatSnackBarModule
     ],
     declarations: [
         PimsCardComponent,

@@ -17,6 +17,7 @@ import {
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 /**
  * App imports
@@ -69,6 +70,9 @@ export class PimsTableComponent<T> implements OnChanges, OnInit, AfterViewInit {
     dataSource: MatTableDataSource<T>;
     columnsNames: string[] = [];
     pageSizeOptions: number[];
+
+    constructor( private snackbar: MatSnackBar ) {
+    }
 
     /**********************************************************************************************\
      *                                                                                            *
@@ -152,13 +156,27 @@ export class PimsTableComponent<T> implements OnChanges, OnInit, AfterViewInit {
     onValidityChanged(
         event: MatSlideToggleChange,
         row: T,
+        rowIndex: number,
         column: PimsTableColumn<T>
     ): void {
-        console.log( event, row[ column.name ], column.name );
         // TODO: Add a MatTooltip to inform that the toggle is to check validity
-        // TODO: Add a snackbar to display a notification when the toggle is used
         // TODO: Add styling
         // TODO: Implement the switch to Accordion for mobile
+
+        // Changing the validity state in our copy of the data
+        ( row[ column.name ] as ValueWithValidity ).valid = event.checked;
+
+        // Notifying the user
+        const message = `The information '${column.name}' for the row N° ${rowIndex} is now considered: `
+            + ( event.checked ? 'valid' : 'invalid' );
+        this.snackbar.open(
+            message,
+            undefined,
+            {
+                duration:         5 * 1000,
+                verticalPosition: 'top'
+            }
+        );
     }
 
     getValue( item: ValueWithValidity | string ): string {
