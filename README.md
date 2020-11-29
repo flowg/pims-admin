@@ -13,7 +13,8 @@ npm install
 ```
 npm start
 ```
-4. Enjoy 😊
+4. Navigate to `http://localhost:4200/`
+5. Enjoy 😊
 
 ## Development server
 
