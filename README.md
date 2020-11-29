@@ -1,6 +1,19 @@
-# PimsAdmin
+# Pim's Admin
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+
+## How to run the app ? 🤔
+
+1. Make sure you have Node.js and NPM on your computer
+2. In a terminal, put yourself at the root of this project and type :
+```
+npm install
+```
+3. Then :
+```
+npm start
+```
+4. Enjoy 😊
 
 ## Development server
 
