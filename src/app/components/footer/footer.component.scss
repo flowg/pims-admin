@@ -1,0 +1,14 @@
+// Imports
+@import 'variables';
+
+// Variables
+
+// Extract the palettes you need from the theme definition
+$primary: map-get($pims-theme, primary);
+
+// Styling
+footer {
+  background-color: mat-color($primary);
+  padding: $default-padding ( $default-padding * 2 );
+  text-align: center;
+}
