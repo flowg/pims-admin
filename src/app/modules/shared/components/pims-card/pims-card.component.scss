@@ -1,0 +1,14 @@
+// Imports
+@import 'variables';
+
+// Variables
+
+// Extract the palettes you need from the theme definition
+$accent: map-get($pims-theme, accent);
+
+// Styling
+:host {
+  border-radius: $default-border-radius;
+  background-color: $component-background;
+  border: medium solid mat-color($accent, darker);
+}

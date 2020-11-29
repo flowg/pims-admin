@@ -1,0 +1,8 @@
+// Imports
+@import 'variables';
+
+// Styling
+:host {
+  display: block;
+  padding: $default-padding ( $default-padding * 2 );
+}

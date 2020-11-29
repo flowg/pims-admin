@@ -1,0 +1,25 @@
+// Imports
+@import 'variables';
+
+// Styling
+.pims-table {
+  width: 100%;
+  background-color: $component-background;
+
+  th.mat-header-cell, td.mat-cell {
+    padding: 0 $default-padding;
+  }
+
+  td.mat-cell {
+    border-bottom: none;
+
+    .pims-cell {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.mat-paginator {
+  background-color: $component-background;
+}

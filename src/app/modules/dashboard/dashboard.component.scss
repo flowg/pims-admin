@@ -1,0 +1,30 @@
+// Imports
+@import 'variables';
+
+// Styling
+:host {
+  height: 100%;
+  padding: $default-padding * 2;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-areas:
+    "users users users ."
+    "users users users ."
+    ". . . ."
+    ". . . .";
+
+  #users-table {
+    grid-area: users;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  :host {
+    grid-template-areas:
+    "users users users users"
+    "users users users users"
+    ". . . ."
+    ". . . .";
+  }
+}
