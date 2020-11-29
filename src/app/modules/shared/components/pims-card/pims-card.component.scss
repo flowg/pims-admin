@@ -11,4 +11,19 @@ $accent: map-get($pims-theme, accent);
   border-radius: $default-border-radius;
   background-color: $component-background;
   border: medium solid mat-color($accent, darker);
+  padding: $default-padding;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    margin: 0;
+    text-align: center;
+  }
+
+  .pims-card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
