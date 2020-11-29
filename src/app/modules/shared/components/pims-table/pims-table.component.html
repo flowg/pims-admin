@@ -1,1 +1,36 @@
-<p>pims-table works!</p>
+<ng-container *ngIf="dataSource">
+    <div class="pims-table-wrapper">
+        <table mat-table class="pims-table" matSort [dataSource]="dataSource">
+            <caption>{{ tableTitle }}</caption>
+
+            <!-- Template for columns -->
+            <ng-container *ngFor="let column of availableColumns; index as j" [matColumnDef]="column.name">
+                <th mat-header-cell *matHeaderCellDef scope="col" mat-sort-header [disabled]="!column.sortable"
+                    [title]="column.tooltipLabel">
+                    {{ column.label }}
+                </th>
+                <td mat-cell *matCellDef="let row; index as i" [title]="row[ column.name ]"
+                    [tabindex]="getTabIndexForCell(i, j)">
+                    <div>{{ row[ column.name ] }}</div>
+                    <mat-slide-toggle *ngIf="validityToggle"
+                                      [tabindex]="getTabIndexForCell(i, j) + 1"
+                                      (change)="onValidityChanged($event, row, column)">
+                    </mat-slide-toggle>
+                </td>
+            </ng-container>
+
+            <!-- Template for rows -->
+            <tr mat-header-row *matHeaderRowDef="columnsNames; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: columnsNames"></tr>
+        </table>
+    </div>
+    <div class="pims-table-controls">
+        <nav class="pims-paginator-wrapper">
+            <mat-paginator [pageIndex]="initialPagination.pageIndex"
+                           [pageSize]="initialPagination.pageSize"
+                           [pageSizeOptions]="pageSizeOptions"
+                           [showFirstLastButtons]="true">
+            </mat-paginator>
+        </nav>
+    </div>
+</ng-container>
