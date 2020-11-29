@@ -139,30 +139,12 @@ export class PimsTableComponent<T> implements OnChanges, OnInit, AfterViewInit {
      *                                                                                                                *
      \*****************************************************************************************************************/
 
-    /**
-     * Cette méthode permet de calculer automatiquement la valeur de
-     * l'attribut tabindex permettant de naviguer au clavier, cellule par cellule,
-     * puis, le cas échéant, accéder à l'input au sein d'une cellule éditable
-     *
-     * @param rowIndex: number, l'indice ( 0-based ) de la ligne de la cellule
-     * en question
-     * @param columnIndex: number, l'indice ( 0-based ) de la colonne de la cellule
-     * en question
-     */
-    getTabIndexForCell( rowIndex: number, columnIndex: number ): number {
-        return 1000 + rowIndex * 100 + columnIndex * 5;
-    }
-
     onValidityChanged(
         event: MatSlideToggleChange,
         row: T,
         rowIndex: number,
         column: PimsTableColumn<T>
     ): void {
-        // TODO: Add a MatTooltip to inform that the toggle is to check validity
-        // TODO: Add styling
-        // TODO: Implement the switch to Accordion for mobile
-
         // Changing the validity state in our copy of the data
         ( row[ column.name ] as ValueWithValidity ).valid = event.checked;
 

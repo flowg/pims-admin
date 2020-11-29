@@ -9,13 +9,11 @@
                     [title]="column.tooltipLabel">
                     {{ column.label }}
                 </th>
-                <td mat-cell *matCellDef="let row; index as i" [title]="row[ column.name ]"
-                    [tabindex]="getTabIndexForCell(i, j)">
+                <td mat-cell *matCellDef="let row; index as i" [title]="row[ column.name ]">
                     <div class="pims-cell">
                         <span>{{ getValue( row[ column.name ] ) }}</span>
                         <mat-slide-toggle *ngIf="validityToggle"
                                           [checked]="row[ column.name ]?.valid"
-                                          [tabindex]="getTabIndexForCell(i, j) + 1"
                                           (change)="onValidityChanged($event, row, i, column)">
                         </mat-slide-toggle>
                     </div>

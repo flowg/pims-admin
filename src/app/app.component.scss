@@ -1,3 +1,6 @@
+// Imports
+@import 'variables';
+
 // Styling
 :host {
   display: flex;
@@ -6,5 +9,11 @@
 
   main {
     flex: 1;
+  }
+}
+
+@media screen and (max-width: $small-breakpoint) {
+  :host {
+    display: inline-flex;
   }
 }

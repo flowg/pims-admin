@@ -19,12 +19,20 @@
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: $medium-breakpoint) {
   :host {
     grid-template-areas:
     "users users users users"
     "users users users users"
     ". . . ."
     ". . . .";
+  }
+}
+
+@media screen and (max-width: $small-breakpoint) {
+  :host {
+    padding: $default-padding;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
   }
 }
